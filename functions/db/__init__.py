@@ -12,7 +12,13 @@ engine = create_engine(DB_URL)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 
-from .Faces import Faces
+from .tables.Faces import Faces
 from .add_face import add_face
+from .get_embedding import get_embedding
 
 Base.metadata.create_all(bind=engine)
+
+__all__ = [
+    "add_face",
+    "get_embedding",
+]

@@ -1,4 +1,4 @@
-from . import (
+from .. import (
     Base,
     Column,
     Integer,
