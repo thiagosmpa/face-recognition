@@ -1,15 +1,16 @@
 from . import (
     Session,
     Faces,
-    UniqueViolation
+    UniqueViolation,
+    json
 )
 import numpy as np
 
 def add_face(name, embeddings):
     try:
         with Session() as session:
-            embeddings = np.array2string(embeddings, separator=',')
-            user = Faces(name=name, embeddings='string')
+            embeddings = json.dumps(embeddings.tolist())
+            user = Faces(name=name, embeddings=embeddings)
             session.add(user)
             session.commit()
 

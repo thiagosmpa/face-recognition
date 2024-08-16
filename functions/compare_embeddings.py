@@ -1,5 +1,4 @@
 from sklearn.metrics.pairwise import cosine_similarity
-from . import extract_features
 
 def compare_embeddings(features1, features2):
     """
@@ -10,4 +9,5 @@ def compare_embeddings(features1, features2):
     if features1 is None or features2 is None:
         return None
     similarity = cosine_similarity(features1, features2)[0][0]
+    
     return similarity

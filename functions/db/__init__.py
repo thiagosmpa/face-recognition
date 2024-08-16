@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from psycopg2.errors import UniqueViolation
 
+import json
 import dotenv
 import os
 dotenv.load_dotenv()

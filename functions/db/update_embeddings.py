@@ -1,6 +1,7 @@
 from . import (
     Session,
     Faces,
+    json
 )
 import numpy as np
 
@@ -9,7 +10,7 @@ def update_embeddings(name, embeddings):
         with Session() as session:
             user = session.query(Faces).filter(Faces.name == name).first()
             if user:
-                user.embeddings = np.array2string(embeddings, separator=',')
+                user.embeddings = json.dumps(embeddings.tolist())
                 session.commit()
             else:
                 return Exception("User not found")
