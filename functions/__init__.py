@@ -10,7 +10,7 @@ from .FaceTransformer import FaceTransformer
 from .detect_face import detect_face
 from .compare_embeddings import compare_embeddings
 from .extract_features import extract_features
-from .db import add_face, get_embedding, update_embedding
+from .db import add_face, get_embeddings, update_embeddings
 
 __all__ = [
     "pth_processing",
@@ -19,6 +19,6 @@ __all__ = [
     "compare_embeddings",
     "extract_features",
     "add_face",
-    "get_embedding",
-    "update_embedding"
+    "get_embeddings",
+    "update_embeddings"
 ]

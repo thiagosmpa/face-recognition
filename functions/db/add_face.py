@@ -3,11 +3,13 @@ from . import (
     Faces,
     UniqueViolation
 )
+import numpy as np
 
 def add_face(name, embeddings):
     try:
         with Session() as session:
-            user = Faces(name="Thiago", embeddings='string')
+            embeddings = np.array2string(embeddings, separator=',')
+            user = Faces(name=name, embeddings='string')
             session.add(user)
             session.commit()
 
