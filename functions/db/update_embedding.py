@@ -4,16 +4,15 @@ from . import (
 )
 import numpy as np
 
-def get_embedding(name):
+def update_embedding(name, embedding):
     try:
         with Session() as session:
             user = session.query(Faces).filter(Faces.name == name).first()
             if user:
-                embedding = user.embeddings
+                user.embeddings = str(embedding)
+                session.commit()
             else:
-                return None
-        
-        return embedding
+                return Exception("User not found")
 
     except Exception as e:
         print(f"\nError getting embedding: {e}\n")

@@ -8,16 +8,17 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 from .pth_processing import pth_processing
 from .FaceTransformer import FaceTransformer
 from .detect_face import detect_face
-from .compare_faces import compare_faces
+from .compare_embeddings import compare_embeddings
 from .extract_features import extract_features
-from .db import add_face, get_embedding
+from .db import add_face, get_embedding, update_embedding
 
 __all__ = [
     "pth_processing",
     "FaceTransformer",
     "detect_face",
-    "compare_faces",
+    "compare_embeddings",
     "extract_features",
     "add_face",
     "get_embedding",
+    "update_embedding"
 ]

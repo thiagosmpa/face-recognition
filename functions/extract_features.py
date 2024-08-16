@@ -12,6 +12,10 @@ pth_backbone_model = torch.jit.load('model/torchscript_model_0_66_49_wo_gl.pth')
 model = FaceTransformer(pth_backbone_model).to(device)
 
 def extract_features(image):
+    """
+        Extract features from a cv2 image.
+        The code itself detects the face in the image and extracts the features.
+    """
     face = detect_face(image)
     if face is None:
         return None

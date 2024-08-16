@@ -15,10 +15,12 @@ Session = sessionmaker(bind=engine)
 from .tables.Faces import Faces
 from .add_face import add_face
 from .get_embedding import get_embedding
+from .update_embedding import update_embedding
 
 Base.metadata.create_all(bind=engine)
 
 __all__ = [
     "add_face",
     "get_embedding",
+    "update_embedding"
 ]
