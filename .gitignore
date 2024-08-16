@@ -2,3 +2,4 @@ model/
 src/photo1.jpeg
 src/photo2.jpeg
 src/photo3.jpeg
+.env
