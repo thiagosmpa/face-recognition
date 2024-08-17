@@ -1,11 +1,11 @@
-import torch
-import torch.nn as nn
 import cv2
 from PIL import Image
-import numpy as np
 
+import torch
+import torch.nn as nn
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+import numpy as np
 import random
 
 def set_seed(seed=42):
@@ -23,7 +23,7 @@ from .FaceTransformer import FaceTransformer
 from .detect_face import detect_face
 from .compare_embeddings import compare_embeddings
 from .extract_features import extract_features
-from .db import add_face, get_embeddings, update_embeddings
+from .db import create_embeddings, read_embeddings, update_embeddings
 
 __all__ = [
     "pth_processing",
@@ -31,7 +31,7 @@ __all__ = [
     "detect_face",
     "compare_embeddings",
     "extract_features",
-    "add_face",
-    "get_embeddings",
+    "create_embeddings",
+    "read_embeddings",
     "update_embeddings"
 ]

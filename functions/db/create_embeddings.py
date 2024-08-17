@@ -6,7 +6,7 @@ from . import (
 )
 import numpy as np
 
-def add_face(name, embeddings):
+def create_embeddings(name, embeddings):
     try:
         with Session() as session:
             embeddings = json.dumps(embeddings.tolist())

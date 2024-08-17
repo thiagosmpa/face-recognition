@@ -2,10 +2,9 @@ from . import (
     torch,
     nn,
     Image,
+    device
 )
 from torchvision import transforms
-
-from . import device
 
 def pth_processing(fp):
     class PreprocessInput(nn.Module):

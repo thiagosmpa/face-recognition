@@ -14,14 +14,14 @@ Base = declarative_base()
 Session = sessionmaker(bind=engine)
 
 from .tables.Faces import Faces
-from .add_face import add_face
-from .get_embeddings import get_embeddings
+from .create_embeddings import create_embeddings
+from .read_embeddings import read_embeddings
 from .update_embeddings import update_embeddings
 
 Base.metadata.create_all(bind=engine)
 
 __all__ = [
-    "add_face",
-    "get_embeddings",
+    "create_embeddings",
+    "read_embeddings",
     "update_embeddings"
 ]
